@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BORDER FORCE</title>
+    <style>
+        h1 {
+            font: normal 30pt Arial;
+            color: blueviolet;
+
+        }
+        h2 {
+            font: normal 20pt Arial;
+            background: rgb(37, 216, 216);
+            padding: 20px 10px;
+            
+        }
+        div#res {
+            margin-top: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Document checking system</h1>
+    <h2>Nationality</h2><input type="string" name="txtna" id="txtna">
+    <input type="button" value="Verify" onclick="verification()">
+    <div id="answer">
+
+
+    </div>
+    <script>
+        function verification() {
+            var txtn = window.document.querySelector('input#txtna')
+            var answer = window.document.querySelector('div#answer')
+            var birth = String(txtn.value)
+            answer.innerHTML = `You came from ${birth}`
+            if (birth != 'England') {
+                answer.innerHTML += '<p>You are Foreigner!</p>'
+            } else {
+                answer.innerHTML += '<p>You are British!</p>'
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
